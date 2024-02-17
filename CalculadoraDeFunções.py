@@ -109,26 +109,31 @@ class App(TKMT.ThemedTKinterFrame):
         global Perímetro
         global Área
 
-        if self.checkbox2.get() == True and self.optionmenuvar.get() == "Triângulo":
-            print(PTriângulo)
+        if not hasattr(self, 'button2_clicked') or not self.button2_clicked:
+            if self.checkbox2.get() == True:
 
-        if self.checkbox2.get() == True and self.optionmenuvar.get() == "Quadrado":
-            print(PQuadrado)
+                if self.checkbox2.get() == True and self.optionmenuvar.get() == "Triângulo":
+                    self.input_frame.Label(PTriângulo)
 
-        if self.checkbox2.get() == True and self.optionmenuvar.get() == "Retângulo":
-            print(PRetângulo)
+                if self.checkbox2.get() == True and self.optionmenuvar.get() == "Quadrado":
+                    self.input_frame.Label(PQuadrado)
 
-        if self.checkbox2.get() == True and self.optionmenuvar.get() == "Paralelogramo":
-            print(PParalelogramo)
+                if self.checkbox2.get() == True and self.optionmenuvar.get() == "Retângulo":
+                    self.input_frame.Label(PRetângulo)
 
-        if self.checkbox2.get() == True and self.optionmenuvar.get() == "Losango":
-            print(PLosango)
+                if self.checkbox2.get() == True and self.optionmenuvar.get() == "Paralelogramo":
+                    self.input_frame.Label(PParalelogramo)
 
-        if self.checkbox2.get() == True and self.optionmenuvar.get() == "Trapézio":
-            print(PTrapézio)
+                if self.checkbox2.get() == True and self.optionmenuvar.get() == "Losango":
+                    self.input_frame.Label(PLosango)
 
-        if self.checkbox2.get() == True and self.optionmenuvar.get() == "Círculo":
-            print(PCírculo)
+                if self.checkbox2.get() == True and self.optionmenuvar.get() == "Trapézio":
+                    self.input_frame.Label(PTrapézio)
+
+                if self.checkbox2.get() == True and self.optionmenuvar.get() == "Círculo":
+                    self.input_frame.Label(PCírculo)
+
+                self.button2_clicked = True
 
     def handleButtonClick(self):
         print("Opção escolhida:", self.optionmenuvar.get())
