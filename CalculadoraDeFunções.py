@@ -1,50 +1,134 @@
 import TKinterModernThemes as TKMT
 import tkinter as tk
+import math
 
 class App(TKMT.ThemedTKinterFrame):
 
     def textupdate(self, _var, _indx, _mode):
 
         if self.optionmenuvar.get() == "Triângulo":
-            print("Valor 1:", self.textinputvar.get())
-            print("Valor 2:", self.textinputvar2.get())
-            print("Valor 3:", self.textinputvar3.get())
+            lado1_str = self.textinputvar.get()
+            lado2_str = self.textinputvar2.get()
+            lado3_str = self.textinputvar3.get()
+
+            try:
+                lado1 = float(lado1_str)
+                lado2 = float(lado2_str)
+                lado3 = float(lado3_str)
+
+                global PTriângulo
+                PTriângulo = lado1 + lado2 + lado3 
+
+            except ValueError:
+                return        
 
         if self.optionmenuvar.get() == "Quadrado":
-            print("Valor 1:", self.textinputvar.get())
+            lado1_str = self.textinputvar.get()
+
+            try:
+                lado1 = float(lado1_str)
+
+                global PQuadrado
+                PQuadrado = lado1 * 4
+
+            except ValueError:
+                return
 
         if self.optionmenuvar.get() == "Retângulo":
-            print("Valor 1:", self.textinputvar.get())
-            print("Valor 2:", self.textinputvar2.get())
+            lado1_str = self.textinputvar.get()
+            lado2_str = self.textinputvar2.get()
+
+            try:
+                lado1 = float(lado1_str)
+                lado2 = float(lado2_str)
+
+                global PRetângulo
+                PRetângulo = (2*lado1) + (2*lado2)
+
+            except ValueError:
+                return
 
         if self.optionmenuvar.get() == "Paralelogramo":
-            print("Valor 1:", self.textinputvar.get())
-            print("Valor 2:", self.textinputvar2.get())
+            lado1_str = self.textinputvar.get()
+            lado2_str = self.textinputvar2.get()
+
+            try:
+                lado1 = float(lado1_str)
+                lado2 = float(lado2_str)
+
+                global PParalelogramo
+                PParalelogramo = (2*lado1) + (2*lado2)
+
+            except ValueError:
+                return
 
         if self.optionmenuvar.get() == "Losango":
-            print("Valor 1:", self.textinputvar.get())
+            lado1_str = self.textinputvar.get()
+
+            try:
+                lado1 = float(lado1_str)
+
+                global PLosango
+                PLosango = lado1 * 4
+
+            except ValueError:
+                return
 
         if self.optionmenuvar.get() == "Trapézio":
-            print("Valor 1:", self.textinputvar.get())
-            print("Valor 2:", self.textinputvar2.get())
-            print("Valor 3:", self.textinputvar3.get())
-            print("Valor 4:", self.textinputvar4.get())
+            lado1_str = self.textinputvar.get()
+            lado2_str = self.textinputvar2.get()
+            lado3_str = self.textinputvar3.get()
+            lado4_str = self.textinputvar4.get()
+
+            try:
+                lado1 = float(lado1_str)
+                lado2 = float(lado2_str)
+                lado3 = float(lado3_str)
+                lado4 = float(lado4_str)
+
+                global PTrapézio
+                PTrapézio = lado1 + lado2 + lado3 + lado4
+
+            except ValueError:
+                return 
 
         if self.optionmenuvar.get() == "Círculo":
-            print("Valor 1:", self.textinputvar.get())
+            lado1_str = self.textinputvar.get()
 
-    def printcheckboxvars2(self, number):
+            try:
+                lado1 = float(lado1_str)
 
-        if self.checkbox2.get() == True:
-            print("Cálculo do Perímetro")
+                global PCírculo
+                PCírculo = 2 * math.pi * lado1
 
-    def printcheckboxvars1(self, number):
-
-        if self.checkbox1.get() == True:
-            print("Cálculo da Área")
+            except ValueError:
+                return
 
     def handleButton2Click(self):
-        print("Botão Clicado")
+
+        global Perímetro
+        global Área
+
+        if self.checkbox2.get() == True and self.optionmenuvar.get() == "Triângulo":
+            print(PTriângulo)
+
+        if self.checkbox2.get() == True and self.optionmenuvar.get() == "Quadrado":
+            print(PQuadrado)
+
+        if self.checkbox2.get() == True and self.optionmenuvar.get() == "Retângulo":
+            print(PRetângulo)
+
+        if self.checkbox2.get() == True and self.optionmenuvar.get() == "Paralelogramo":
+            print(PParalelogramo)
+
+        if self.checkbox2.get() == True and self.optionmenuvar.get() == "Losango":
+            print(PLosango)
+
+        if self.checkbox2.get() == True and self.optionmenuvar.get() == "Trapézio":
+            print(PTrapézio)
+
+        if self.checkbox2.get() == True and self.optionmenuvar.get() == "Círculo":
+            print(PCírculo)
 
     def handleButtonClick(self):
         print("Opção escolhida:", self.optionmenuvar.get())
@@ -135,8 +219,8 @@ class App(TKMT.ThemedTKinterFrame):
         self.checkbox1 = tk.BooleanVar()
         self.checkbox2 = tk.BooleanVar()
         self.togglebuttonvar = tk.BooleanVar()
-        escolha2 = self.input_frame.Checkbutton("Perímetro", self.checkbox2, self.printcheckboxvars2, (1,))
-        escolha3 = self.input_frame.Checkbutton("Área", self.checkbox1, self.printcheckboxvars1, (1,))
+        escolha2 = self.input_frame.Checkbutton("Perímetro", self.checkbox2)
+        escolha3 = self.input_frame.Checkbutton("Área", self.checkbox1)
 
         escolha4 = self.input_frame.Button("Confirmar", self.handleButtonClick)
 
