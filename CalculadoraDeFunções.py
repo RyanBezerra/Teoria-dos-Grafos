@@ -7,11 +7,20 @@ math.pi = 3.14
 
 class App(TKMT.ThemedTKinterFrame):
 
+    global contador2ToF
+    contador2ToF = False
+
     global contador
     contador = 0
 
     global contador1
     contador1 = 0
+
+    global contador2
+    contador2 = 0
+
+    global contador3
+    contador3 = 0
 
     def textupdate(self, _var, _indx, _mode):
 
@@ -224,206 +233,287 @@ class App(TKMT.ThemedTKinterFrame):
         global log
         global log1
 
-        if not hasattr(self, 'button2_clicked') or not self.button2_clicked:
-
-            if self.checkbox2.get() == True:
-
-                if contador >= 1:
-                    log.destroy()
-                    contador = contador - 1
-
-                if self.checkbox2.get() == True and self.optionmenuvar.get() == "Triângulo":
-                    log = self.input_frame3.Text(f"Perímetro: {PTriângulo}")
-
-                if self.checkbox2.get() == True and self.optionmenuvar.get() == "Quadrado":
-                    log = self.input_frame3.Text(f"Perímetro: {PQuadrado}")
-
-                if self.checkbox2.get() == True and self.optionmenuvar.get() == "Retângulo":
-                    log = self.input_frame3.Text(f"Perímetro: {PRetângulo}")
-
-                if self.checkbox2.get() == True and self.optionmenuvar.get() == "Paralelogramo":
-                    log = self.input_frame3.Text(f"Perímetro: {PParalelogramo}")
-
-                if self.checkbox2.get() == True and self.optionmenuvar.get() == "Losango":
-                    log = self.input_frame3.Text(f"Perímetro: {PLosango}")
-
-                if self.checkbox2.get() == True and self.optionmenuvar.get() == "Trapézio":
-                    log = self.input_frame3.Text(f"Perímetro: {PTrapézio}")
-
-                if self.checkbox2.get() == True and self.optionmenuvar.get() == "Círculo":
-                    log = self.input_frame3.Text(f"Perímetro: {PCírculo}")
-
-                contador = contador + 1
-                print(contador)
-
-            if self.checkbox1.get() == True:
-
-                if contador1 >= 1:
-                    log1.destroy()
-                    contador1 = contador1 - 1
-
-                if self.checkbox1.get() == True and self.optionmenuvar.get() == "Triângulo":
-                    log1 = self.input_frame3.Text(f"Área: {ATriângulo}")
-
-                if self.checkbox1.get() == True and self.optionmenuvar.get() == "Quadrado":
-                    log1 = self.input_frame3.Text(f"Área: {AQuadrado}")
-
-                if self.checkbox1.get() == True and self.optionmenuvar.get() == "Retângulo":
-                    log1 = self.input_frame3.Text(f"Área: {ARetângulo}")
-
-                if self.checkbox1.get() == True and self.optionmenuvar.get() == "Paralelogramo":
-                    log1 = self.input_frame3.Text(f"Área: {AParalelogramo}")
-
-                if self.checkbox1.get() == True and self.optionmenuvar.get() == "Losango":
-                    log1 = self.input_frame3.Text(f"Área: {ALosango}")
-
-                if self.checkbox1.get() == True and self.optionmenuvar.get() == "Trapézio":
-                    log1 = self.input_frame3.Text(f"Área: {ATrapézio}")
-
-                if self.checkbox1.get() == True and self.optionmenuvar.get() == "Círculo":
-                    log1 = self.input_frame3.Text(f"Área: {ACírculo}")
-
-                contador1 = contador1 + 1
-                print(contador1)
-
-    def handleButtonClick(self):
-
         if self.checkbox2.get() == True:
 
-            self.nextCol()
-            self.input_frame2 = self.addLabelFrame("Perímetro:", rowspan=1)
+            if contador >= 1:
+                log.destroy()
+                contador = contador - 1
 
-            if self.optionmenuvar.get() == "Triângulo":
+            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Triângulo":
+                log = self.input_frame3.Text(f"Perímetro: {PTriângulo}")
 
-                self.textinputvar = tk.StringVar()
-                self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar)
-                self.textinputvar2 = tk.StringVar()
-                self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar2)
-                self.textinputvar3 = tk.StringVar()
-                self.textinputvar3.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar3)
+            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Quadrado":
+                log = self.input_frame3.Text(f"Perímetro: {PQuadrado}")
 
-            if self.optionmenuvar.get() == "Quadrado":
+            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Retângulo":
+                log = self.input_frame3.Text(f"Perímetro: {PRetângulo}")
 
-                self.textinputvar = tk.StringVar()
-                self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar)
+            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Paralelogramo":
+                log = self.input_frame3.Text(f"Perímetro: {PParalelogramo}")
 
-            if self.optionmenuvar.get() == "Retângulo":
+            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Losango":
+                log = self.input_frame3.Text(f"Perímetro: {PLosango}")
 
-                self.textinputvar = tk.StringVar()
-                self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar)
-                self.textinputvar2 = tk.StringVar()
-                self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar2)
+            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Trapézio":
+                log = self.input_frame3.Text(f"Perímetro: {PTrapézio}")
 
-            if self.optionmenuvar.get() == "Paralelogramo":
+            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Círculo":
+                log = self.input_frame3.Text(f"Perímetro: {PCírculo}")
 
-                self.textinputvar = tk.StringVar()
-                self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar)
-                self.textinputvar2 = tk.StringVar()
-                self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar2)
-
-            if self.optionmenuvar.get() == "Losango":
-
-                self.textinputvar = tk.StringVar()
-                self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar)
-
-            if self.optionmenuvar.get() == "Trapézio":
-
-                self.textinputvar = tk.StringVar()
-                self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar)
-                self.textinputvar2 = tk.StringVar()
-                self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar2)
-                self.textinputvar3 = tk.StringVar()
-                self.textinputvar3.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar3)
-                self.textinputvar4 = tk.StringVar()
-                self.textinputvar4.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar4)
-
-            if self.optionmenuvar.get() == "Círculo":
-
-                self.textinputvar = tk.StringVar()
-                self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar)
-
-            self.input_frame2.Button("Confirmar", self.handleButton2Click)
+            contador = contador + 1
 
         if self.checkbox1.get() == True:
 
-            self.nextCol()
-            self.input_frame2 = self.addLabelFrame("Área:", rowspan=1)
+            if contador1 >= 1:
+                log1.destroy()
+                contador1 = contador1 - 1
+
+            if self.checkbox1.get() == True and self.optionmenuvar.get() == "Triângulo":
+                log1 = self.input_frame3.Text(f"Área: {ATriângulo}")
+
+            if self.checkbox1.get() == True and self.optionmenuvar.get() == "Quadrado":
+                log1 = self.input_frame3.Text(f"Área: {AQuadrado}")
+
+            if self.checkbox1.get() == True and self.optionmenuvar.get() == "Retângulo":
+                log1 = self.input_frame3.Text(f"Área: {ARetângulo}")
+
+            if self.checkbox1.get() == True and self.optionmenuvar.get() == "Paralelogramo":
+                log1 = self.input_frame3.Text(f"Área: {AParalelogramo}")
+
+            if self.checkbox1.get() == True and self.optionmenuvar.get() == "Losango":
+                log1 = self.input_frame3.Text(f"Área: {ALosango}")
+
+            if self.checkbox1.get() == True and self.optionmenuvar.get() == "Trapézio":
+                log1 = self.input_frame3.Text(f"Área: {ATrapézio}")
+
+            if self.checkbox1.get() == True and self.optionmenuvar.get() == "Círculo":
+                log1 = self.input_frame3.Text(f"Área: {ACírculo}")
+
+            contador1 = contador1 + 1
+
+    def handleButtonClick(self):
+
+        global contador2
+        global contador3
+        global delete_entry
+        global delete_buttons
+        global delete_entry2
+        global delete_buttons2
+
+        if self.checkbox2.get() == True:
+
+            if contador2 == 1:
+                for entry in delete_entry:
+                    print(entry)
+                    entry.destroy()
+                for button in delete_buttons:
+                    button.destroy()
 
             if self.optionmenuvar.get() == "Triângulo":
 
+                delete_entry = []
+                delete_buttons = []
+
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar)
+                delete_entry.append(self.input_frame2.Entry(self.textinputvar))
                 self.textinputvar2 = tk.StringVar()
                 self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar2)
+                delete_entry.append(self.input_frame2.Entry(self.textinputvar2))
+                self.textinputvar3 = tk.StringVar()
+                self.textinputvar3.trace_add('write', self.textupdate)
+                delete_entry.append(self.input_frame2.Entry(self.textinputvar3))
+
+                delete_buttons.append(self.input_frame2.Button("Confirmar", self.handleButton2Click))
 
             if self.optionmenuvar.get() == "Quadrado":
 
+                delete_entry = []
+                delete_buttons = []
+
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar)
+                delete_entry.append(self.input_frame2.Entry(self.textinputvar))
+
+                delete_buttons.append(self.input_frame2.Button("Confirmar", self.handleButton2Click))
 
             if self.optionmenuvar.get() == "Retângulo":
 
+                delete_entry = []
+                delete_buttons = []
+
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar)
+                delete_entry.append(self.input_frame2.Entry(self.textinputvar))
                 self.textinputvar2 = tk.StringVar()
                 self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar2)
+                delete_entry.append(self.input_frame2.Entry(self.textinputvar2))
+
+                delete_buttons.append(self.input_frame2.Button("Confirmar", self.handleButton2Click))
 
             if self.optionmenuvar.get() == "Paralelogramo":
 
+                delete_entry = []
+                delete_buttons = []
+
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar)
+                delete_entry.append(self.input_frame2.Entry(self.textinputvar))
                 self.textinputvar2 = tk.StringVar()
                 self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar2)
+                delete_entry.append(self.input_frame2.Entry(self.textinputvar2))
+
+                delete_buttons.append(self.input_frame2.Button("Confirmar", self.handleButton2Click))
 
             if self.optionmenuvar.get() == "Losango":
 
+                delete_entry = []
+                delete_buttons = []
+
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar)
-                self.textinputvar2 = tk.StringVar()
-                self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar2)
+                delete_entry.append(self.input_frame2.Entry(self.textinputvar))
+
+                delete_buttons.append(self.input_frame2.Button("Confirmar", self.handleButton2Click))
 
             if self.optionmenuvar.get() == "Trapézio":
 
+                delete_entry = []
+                delete_buttons = []
+
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar)
+                delete_entry.append(self.input_frame2.Entry(self.textinputvar))
                 self.textinputvar2 = tk.StringVar()
                 self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar2)
+                delete_entry.append(self.input_frame2.Entry(self.textinputvar2))
                 self.textinputvar3 = tk.StringVar()
                 self.textinputvar3.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar3)
+                delete_entry.append(self.input_frame2.Entry(self.textinputvar3))
+                self.textinputvar4 = tk.StringVar()
+                self.textinputvar4.trace_add('write', self.textupdate)
+                delete_entry.append(self.input_frame2.Entry(self.textinputvar4))
+
+                delete_buttons.append(self.input_frame2.Button("Confirmar", self.handleButton2Click))
 
             if self.optionmenuvar.get() == "Círculo":
 
+                delete_entry = []
+                delete_buttons = []
+
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame2.Entry(self.textinputvar)
+                delete_entry.append(self.input_frame2.Entry(self.textinputvar))
 
-            self.input_frame2.Button("Confirmar", self.handleButton2Click)
+                delete_buttons.append(self.input_frame2.Button("Confirmar", self.handleButton2Click))
+
+            contador2 = 1
+
+        if self.checkbox1.get() == True:
+
+            if contador3 == 1:
+                for entry in delete_entry2:
+                    print(entry)
+                    entry.destroy()
+                for button in delete_buttons2:
+                    button.destroy()
+
+            if self.optionmenuvar.get() == "Triângulo":
+
+                delete_entry2 = []
+                delete_buttons2 = []
+
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                delete_entry2.append(self.input_frame4.Entry(self.textinputvar))
+                self.textinputvar2 = tk.StringVar()
+                self.textinputvar2.trace_add('write', self.textupdate)
+                delete_entry2.append(self.input_frame4.Entry(self.textinputvar2))
+
+                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton2Click))
+
+            if self.optionmenuvar.get() == "Quadrado":
+
+                delete_entry2 = []
+                delete_buttons2 = []
+
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                delete_entry2.append(self.input_frame4.Entry(self.textinputvar))
+
+                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton2Click))
+
+            if self.optionmenuvar.get() == "Retângulo":
+
+                delete_entry2 = []
+                delete_buttons2 = []
+
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                delete_entry2.append(self.input_frame4.Entry(self.textinputvar))
+                self.textinputvar2 = tk.StringVar()
+                self.textinputvar2.trace_add('write', self.textupdate)
+                delete_entry2.append(self.input_frame4.Entry(self.textinputvar2))
+
+                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton2Click))
+
+            if self.optionmenuvar.get() == "Paralelogramo":
+
+                delete_entry2 = []
+                delete_buttons2 = []
+
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                delete_entry2.append(self.input_frame4.Entry(self.textinputvar))
+                self.textinputvar2 = tk.StringVar()
+                self.textinputvar2.trace_add('write', self.textupdate)
+                delete_entry2.append(self.input_frame4.Entry(self.textinputvar2))
+
+                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton2Click))
+
+            if self.optionmenuvar.get() == "Losango":
+
+                delete_entry2 = []
+                delete_buttons2 = []
+
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                delete_entry2.append(self.input_frame4.Entry(self.textinputvar))
+                self.textinputvar2 = tk.StringVar()
+                self.textinputvar2.trace_add('write', self.textupdate)
+                delete_entry2.append(self.input_frame4.Entry(self.textinputvar2))
+
+                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton2Click))
+
+            if self.optionmenuvar.get() == "Trapézio":
+
+                delete_entry2 = []
+                delete_buttons2 = []
+
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                delete_entry2.append(self.input_frame4.Entry(self.textinputvar))
+                self.textinputvar2 = tk.StringVar()
+                self.textinputvar2.trace_add('write', self.textupdate)
+                delete_entry2.append(self.input_frame4.Entry(self.textinputvar2))
+                self.textinputvar3 = tk.StringVar()
+                self.textinputvar3.trace_add('write', self.textupdate)
+                delete_entry2.append(self.input_frame4.Entry(self.textinputvar3))
+
+                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton2Click))
+
+            if self.optionmenuvar.get() == "Círculo":
+
+                delete_entry2 = []
+                delete_buttons2 = []
+
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                delete_entry2.append(self.input_frame4.Entry(self.textinputvar))
+
+                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton2Click))
+
+            contador3 = 1
 
     def __init__(self):
         super().__init__("Funções", "park", "dark")
@@ -445,6 +535,12 @@ class App(TKMT.ThemedTKinterFrame):
         self.input_frame.Checkbutton("Área", self.checkbox1)
 
         self.input_frame.Button("Confirmar", self.handleButtonClick)
+
+        self.nextCol()
+        self.input_frame2 = self.addLabelFrame("Perímetro:", rowspan=1)
+
+        self.nextCol()
+        self.input_frame4 = self.addLabelFrame("Área:", rowspan=1)
 
         self.run()
 
