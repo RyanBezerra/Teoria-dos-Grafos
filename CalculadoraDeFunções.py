@@ -2,6 +2,8 @@ import TKinterModernThemes as TKMT
 import tkinter as tk
 import math
 
+#Teste
+
 class App(TKMT.ThemedTKinterFrame):
 
     def textupdate(self, _var, _indx, _mode):
