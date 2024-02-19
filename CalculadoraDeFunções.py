@@ -7,8 +7,8 @@ math.pi = 3.14
 
 class App(TKMT.ThemedTKinterFrame):
 
-    global contador2ToF
-    contador2ToF = False
+    global confirmar
+    confirmar = False
 
     global contador
     contador = 0
@@ -224,43 +224,10 @@ class App(TKMT.ThemedTKinterFrame):
                 except ValueError:
                     return  
 
-    def handleButton2Click(self):
+    def handleButton3Click(self):
 
-        global Perímetro
-        global Área
-        global contador
         global contador1
-        global log
         global log1
-
-        if self.checkbox2.get() == True:
-
-            if contador >= 1:
-                log.destroy()
-                contador = contador - 1
-
-            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Triângulo":
-                log = self.input_frame3.Text(f"Perímetro: {PTriângulo}")
-
-            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Quadrado":
-                log = self.input_frame3.Text(f"Perímetro: {PQuadrado}")
-
-            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Retângulo":
-                log = self.input_frame3.Text(f"Perímetro: {PRetângulo}")
-
-            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Paralelogramo":
-                log = self.input_frame3.Text(f"Perímetro: {PParalelogramo}")
-
-            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Losango":
-                log = self.input_frame3.Text(f"Perímetro: {PLosango}")
-
-            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Trapézio":
-                log = self.input_frame3.Text(f"Perímetro: {PTrapézio}")
-
-            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Círculo":
-                log = self.input_frame3.Text(f"Perímetro: {PCírculo}")
-
-            contador = contador + 1
 
         if self.checkbox1.get() == True:
 
@@ -290,6 +257,41 @@ class App(TKMT.ThemedTKinterFrame):
                 log1 = self.input_frame3.Text(f"Área: {ACírculo}")
 
             contador1 = contador1 + 1
+
+
+    def handleButton2Click(self):
+
+        global contador
+        global log
+
+        if self.checkbox2.get() == True:
+
+            if contador >= 1:
+                log.destroy()
+                contador = contador - 1
+
+            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Triângulo":
+                log = self.input_frame3.Text(f"Perímetro: {PTriângulo}")
+
+            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Quadrado":
+                log = self.input_frame3.Text(f"Perímetro: {PQuadrado}")
+
+            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Retângulo":
+                log = self.input_frame3.Text(f"Perímetro: {PRetângulo}")
+
+            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Paralelogramo":
+                log = self.input_frame3.Text(f"Perímetro: {PParalelogramo}")
+
+            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Losango":
+                log = self.input_frame3.Text(f"Perímetro: {PLosango}")
+
+            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Trapézio":
+                log = self.input_frame3.Text(f"Perímetro: {PTrapézio}")
+
+            if self.checkbox2.get() == True and self.optionmenuvar.get() == "Círculo":
+                log = self.input_frame3.Text(f"Perímetro: {PCírculo}")
+
+            contador = contador + 1
 
     def handleButtonClick(self):
 
@@ -430,7 +432,7 @@ class App(TKMT.ThemedTKinterFrame):
                 self.textinputvar2.trace_add('write', self.textupdate)
                 delete_entry2.append(self.input_frame4.Entry(self.textinputvar2))
 
-                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton2Click))
+                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton3Click))
 
             if self.optionmenuvar.get() == "Quadrado":
 
@@ -441,7 +443,7 @@ class App(TKMT.ThemedTKinterFrame):
                 self.textinputvar.trace_add('write', self.textupdate)
                 delete_entry2.append(self.input_frame4.Entry(self.textinputvar))
 
-                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton2Click))
+                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton3Click))
 
             if self.optionmenuvar.get() == "Retângulo":
 
@@ -455,7 +457,7 @@ class App(TKMT.ThemedTKinterFrame):
                 self.textinputvar2.trace_add('write', self.textupdate)
                 delete_entry2.append(self.input_frame4.Entry(self.textinputvar2))
 
-                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton2Click))
+                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton3Click))
 
             if self.optionmenuvar.get() == "Paralelogramo":
 
@@ -469,7 +471,7 @@ class App(TKMT.ThemedTKinterFrame):
                 self.textinputvar2.trace_add('write', self.textupdate)
                 delete_entry2.append(self.input_frame4.Entry(self.textinputvar2))
 
-                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton2Click))
+                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton3Click))
 
             if self.optionmenuvar.get() == "Losango":
 
@@ -483,7 +485,7 @@ class App(TKMT.ThemedTKinterFrame):
                 self.textinputvar2.trace_add('write', self.textupdate)
                 delete_entry2.append(self.input_frame4.Entry(self.textinputvar2))
 
-                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton2Click))
+                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton3Click))
 
             if self.optionmenuvar.get() == "Trapézio":
 
@@ -500,7 +502,7 @@ class App(TKMT.ThemedTKinterFrame):
                 self.textinputvar3.trace_add('write', self.textupdate)
                 delete_entry2.append(self.input_frame4.Entry(self.textinputvar3))
 
-                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton2Click))
+                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton3Click))
 
             if self.optionmenuvar.get() == "Círculo":
 
@@ -511,7 +513,7 @@ class App(TKMT.ThemedTKinterFrame):
                 self.textinputvar.trace_add('write', self.textupdate)
                 delete_entry2.append(self.input_frame4.Entry(self.textinputvar))
 
-                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton2Click))
+                delete_buttons2.append(self.input_frame4.Button("Confirmar", self.handleButton3Click))
 
             contador3 = 1
 
