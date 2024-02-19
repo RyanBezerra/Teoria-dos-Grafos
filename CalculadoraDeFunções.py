@@ -1,10 +1,17 @@
 import TKinterModernThemes as TKMT
+from TKinterModernThemes.WidgetFrame import Widget
 import tkinter as tk
 import math
 
 math.pi = 3.14
 
 class App(TKMT.ThemedTKinterFrame):
+
+    global contador
+    contador = 0
+
+    global contador1
+    contador1 = 0
 
     def textupdate(self, _var, _indx, _mode):
 
@@ -212,60 +219,79 @@ class App(TKMT.ThemedTKinterFrame):
 
         global Perímetro
         global Área
+        global contador
+        global contador1
+        global log
+        global log1
 
         if not hasattr(self, 'button2_clicked') or not self.button2_clicked:
+
             if self.checkbox2.get() == True:
 
+                if contador >= 1:
+                    log.destroy()
+                    contador = contador - 1
+
                 if self.checkbox2.get() == True and self.optionmenuvar.get() == "Triângulo":
-                    self.input_frame3.Label(PTriângulo)
+                    log = self.input_frame3.Text(f"Perímetro: {PTriângulo}")
 
                 if self.checkbox2.get() == True and self.optionmenuvar.get() == "Quadrado":
-                    self.input_frame3.Label(PQuadrado)
+                    log = self.input_frame3.Text(f"Perímetro: {PQuadrado}")
 
                 if self.checkbox2.get() == True and self.optionmenuvar.get() == "Retângulo":
-                    self.input_frame3.Label(PRetângulo)
+                    log = self.input_frame3.Text(f"Perímetro: {PRetângulo}")
 
                 if self.checkbox2.get() == True and self.optionmenuvar.get() == "Paralelogramo":
-                    self.input_frame3.Label(PParalelogramo)
+                    log = self.input_frame3.Text(f"Perímetro: {PParalelogramo}")
 
                 if self.checkbox2.get() == True and self.optionmenuvar.get() == "Losango":
-                    self.input_frame3.Label(PLosango)
+                    log = self.input_frame3.Text(f"Perímetro: {PLosango}")
 
                 if self.checkbox2.get() == True and self.optionmenuvar.get() == "Trapézio":
-                    self.input_frame3.Label(PTrapézio)
+                    log = self.input_frame3.Text(f"Perímetro: {PTrapézio}")
 
                 if self.checkbox2.get() == True and self.optionmenuvar.get() == "Círculo":
-                    self.input_frame3.Label(PCírculo)
+                    log = self.input_frame3.Text(f"Perímetro: {PCírculo}")
+
+                contador = contador + 1
+                print(contador)
 
             if self.checkbox1.get() == True:
 
+                if contador1 >= 1:
+                    log1.destroy()
+                    contador1 = contador1 - 1
+
                 if self.checkbox1.get() == True and self.optionmenuvar.get() == "Triângulo":
-                    self.input_frame3.Label(ATriângulo)
+                    log1 = self.input_frame3.Text(f"Área: {ATriângulo}")
 
                 if self.checkbox1.get() == True and self.optionmenuvar.get() == "Quadrado":
-                    self.input_frame3.Label(AQuadrado)
+                    log1 = self.input_frame3.Text(f"Área: {AQuadrado}")
 
                 if self.checkbox1.get() == True and self.optionmenuvar.get() == "Retângulo":
-                    self.input_frame3.Label(ARetângulo)
+                    log1 = self.input_frame3.Text(f"Área: {ARetângulo}")
 
                 if self.checkbox1.get() == True and self.optionmenuvar.get() == "Paralelogramo":
-                    self.input_frame3.Label(AParalelogramo)
+                    log1 = self.input_frame3.Text(f"Área: {AParalelogramo}")
 
                 if self.checkbox1.get() == True and self.optionmenuvar.get() == "Losango":
-                    self.input_frame3.Label(ALosango)
+                    log1 = self.input_frame3.Text(f"Área: {ALosango}")
 
                 if self.checkbox1.get() == True and self.optionmenuvar.get() == "Trapézio":
-                    self.input_frame3.Label(ATrapézio)
+                    log1 = self.input_frame3.Text(f"Área: {ATrapézio}")
 
                 if self.checkbox1.get() == True and self.optionmenuvar.get() == "Círculo":
-                    self.input_frame3.Label(ACírculo)
+                    log1 = self.input_frame3.Text(f"Área: {ACírculo}")
+
+                contador1 = contador1 + 1
+                print(contador1)
 
     def handleButtonClick(self):
 
         if self.checkbox2.get() == True:
 
             self.nextCol()
-            self.input_frame2 = self.addLabelFrame("Perímetro:", rowspan=2)
+            self.input_frame2 = self.addLabelFrame("Perímetro:", rowspan=1)
 
             if self.optionmenuvar.get() == "Triângulo":
 
@@ -330,10 +356,12 @@ class App(TKMT.ThemedTKinterFrame):
                 self.textinputvar.trace_add('write', self.textupdate)
                 self.input_frame2.Entry(self.textinputvar)
 
+            self.input_frame2.Button("Confirmar", self.handleButton2Click)
+
         if self.checkbox1.get() == True:
 
             self.nextCol()
-            self.input_frame2 = self.addLabelFrame("Área:", rowspan=2)
+            self.input_frame2 = self.addLabelFrame("Área:", rowspan=1)
 
             if self.optionmenuvar.get() == "Triângulo":
 
@@ -395,18 +423,18 @@ class App(TKMT.ThemedTKinterFrame):
                 self.textinputvar.trace_add('write', self.textupdate)
                 self.input_frame2.Entry(self.textinputvar)
 
-        self.input_frame2.Button("Confirmar", self.handleButton2Click)
+            self.input_frame2.Button("Confirmar", self.handleButton2Click)
 
     def __init__(self):
         super().__init__("Funções", "park", "dark")
 
-        self.input_frame3 = self.addLabelFrame("Log:", rowspan=2)
-        self.input_frame3.Text("Historico de Operações")
+        self.input_frame3 = self.addLabelFrame("Log:", rowspan=1)
+        self.input_frame3.Text("Resultados")
 
         self.nextCol()
         self.option_menu_list = ["Triângulo", "Quadrado", "Retângulo", "Paralelogramo", "Losango", "Trapézio", "Círculo"]
         self.optionmenuvar = tk.StringVar(value=self.option_menu_list[0])
-        self.input_frame = self.addLabelFrame("Menu:", rowspan=2)
+        self.input_frame = self.addLabelFrame("Menu:", rowspan=1)
 
         self.input_frame.OptionMenu(self.option_menu_list, self.optionmenuvar)
         
