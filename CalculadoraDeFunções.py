@@ -2,6 +2,8 @@ import TKinterModernThemes as TKMT
 import tkinter as tk
 import math
 
+math.pi = 3.14
+
 class App(TKMT.ThemedTKinterFrame):
 
     def textupdate(self, _var, _indx, _mode):
@@ -215,206 +217,206 @@ class App(TKMT.ThemedTKinterFrame):
             if self.checkbox2.get() == True:
 
                 if self.checkbox2.get() == True and self.optionmenuvar.get() == "Triângulo":
-                    self.input_frame.Label(PTriângulo)
+                    self.input_frame3.Label(PTriângulo)
 
                 if self.checkbox2.get() == True and self.optionmenuvar.get() == "Quadrado":
-                    self.input_frame.Label(PQuadrado)
+                    self.input_frame3.Label(PQuadrado)
 
                 if self.checkbox2.get() == True and self.optionmenuvar.get() == "Retângulo":
-                    self.input_frame.Label(PRetângulo)
+                    self.input_frame3.Label(PRetângulo)
 
                 if self.checkbox2.get() == True and self.optionmenuvar.get() == "Paralelogramo":
-                    self.input_frame.Label(PParalelogramo)
+                    self.input_frame3.Label(PParalelogramo)
 
                 if self.checkbox2.get() == True and self.optionmenuvar.get() == "Losango":
-                    self.input_frame.Label(PLosango)
+                    self.input_frame3.Label(PLosango)
 
                 if self.checkbox2.get() == True and self.optionmenuvar.get() == "Trapézio":
-                    self.input_frame.Label(PTrapézio)
+                    self.input_frame3.Label(PTrapézio)
 
                 if self.checkbox2.get() == True and self.optionmenuvar.get() == "Círculo":
-                    self.input_frame.Label(PCírculo)
+                    self.input_frame3.Label(PCírculo)
 
             if self.checkbox1.get() == True:
 
                 if self.checkbox1.get() == True and self.optionmenuvar.get() == "Triângulo":
-                    self.input_frame.Label(ATriângulo)
+                    self.input_frame3.Label(ATriângulo)
 
                 if self.checkbox1.get() == True and self.optionmenuvar.get() == "Quadrado":
-                    self.input_frame.Label(AQuadrado)
+                    self.input_frame3.Label(AQuadrado)
 
                 if self.checkbox1.get() == True and self.optionmenuvar.get() == "Retângulo":
-                    self.input_frame.Label(ARetângulo)
+                    self.input_frame3.Label(ARetângulo)
 
                 if self.checkbox1.get() == True and self.optionmenuvar.get() == "Paralelogramo":
-                    self.input_frame.Label(AParalelogramo)
+                    self.input_frame3.Label(AParalelogramo)
 
                 if self.checkbox1.get() == True and self.optionmenuvar.get() == "Losango":
-                    self.input_frame.Label(ALosango)
+                    self.input_frame3.Label(ALosango)
 
                 if self.checkbox1.get() == True and self.optionmenuvar.get() == "Trapézio":
-                    self.input_frame.Label(ATrapézio)
+                    self.input_frame3.Label(ATrapézio)
 
                 if self.checkbox1.get() == True and self.optionmenuvar.get() == "Círculo":
-                    self.input_frame.Label(ACírculo)
+                    self.input_frame3.Label(ACírculo)
 
     def handleButtonClick(self):
-        print("Opção escolhida:", self.optionmenuvar.get())
-
-        escolha1.destroy()
-        escolha2.destroy()
-        escolha3.destroy()
-        escolha4.destroy()
 
         if self.checkbox2.get() == True:
 
+            self.nextCol()
+            self.input_frame2 = self.addLabelFrame("Perímetro:", rowspan=2)
+
             if self.optionmenuvar.get() == "Triângulo":
 
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar)
+                self.input_frame2.Entry(self.textinputvar)
                 self.textinputvar2 = tk.StringVar()
                 self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar2)
+                self.input_frame2.Entry(self.textinputvar2)
                 self.textinputvar3 = tk.StringVar()
                 self.textinputvar3.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar3)
+                self.input_frame2.Entry(self.textinputvar3)
 
             if self.optionmenuvar.get() == "Quadrado":
 
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar)
+                self.input_frame2.Entry(self.textinputvar)
 
             if self.optionmenuvar.get() == "Retângulo":
 
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar)
+                self.input_frame2.Entry(self.textinputvar)
                 self.textinputvar2 = tk.StringVar()
                 self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar2)
+                self.input_frame2.Entry(self.textinputvar2)
 
             if self.optionmenuvar.get() == "Paralelogramo":
 
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar)
+                self.input_frame2.Entry(self.textinputvar)
                 self.textinputvar2 = tk.StringVar()
                 self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar2)
+                self.input_frame2.Entry(self.textinputvar2)
 
             if self.optionmenuvar.get() == "Losango":
 
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar)
+                self.input_frame2.Entry(self.textinputvar)
 
             if self.optionmenuvar.get() == "Trapézio":
 
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar)
+                self.input_frame2.Entry(self.textinputvar)
                 self.textinputvar2 = tk.StringVar()
                 self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar2)
+                self.input_frame2.Entry(self.textinputvar2)
                 self.textinputvar3 = tk.StringVar()
                 self.textinputvar3.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar3)
+                self.input_frame2.Entry(self.textinputvar3)
                 self.textinputvar4 = tk.StringVar()
                 self.textinputvar4.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar4)
+                self.input_frame2.Entry(self.textinputvar4)
 
             if self.optionmenuvar.get() == "Círculo":
 
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar)
+                self.input_frame2.Entry(self.textinputvar)
 
         if self.checkbox1.get() == True:
 
+            self.nextCol()
+            self.input_frame2 = self.addLabelFrame("Área:", rowspan=2)
+
             if self.optionmenuvar.get() == "Triângulo":
 
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar)
+                self.input_frame2.Entry(self.textinputvar)
                 self.textinputvar2 = tk.StringVar()
                 self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar2)
+                self.input_frame2.Entry(self.textinputvar2)
 
             if self.optionmenuvar.get() == "Quadrado":
 
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar)
+                self.input_frame2.Entry(self.textinputvar)
 
             if self.optionmenuvar.get() == "Retângulo":
 
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar)
+                self.input_frame2.Entry(self.textinputvar)
                 self.textinputvar2 = tk.StringVar()
                 self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar2)
+                self.input_frame2.Entry(self.textinputvar2)
 
             if self.optionmenuvar.get() == "Paralelogramo":
 
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar)
+                self.input_frame2.Entry(self.textinputvar)
                 self.textinputvar2 = tk.StringVar()
                 self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar2)
+                self.input_frame2.Entry(self.textinputvar2)
 
             if self.optionmenuvar.get() == "Losango":
 
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar)
+                self.input_frame2.Entry(self.textinputvar)
                 self.textinputvar2 = tk.StringVar()
                 self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar2)
+                self.input_frame2.Entry(self.textinputvar2)
 
             if self.optionmenuvar.get() == "Trapézio":
 
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar)
+                self.input_frame2.Entry(self.textinputvar)
                 self.textinputvar2 = tk.StringVar()
                 self.textinputvar2.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar2)
+                self.input_frame2.Entry(self.textinputvar2)
                 self.textinputvar3 = tk.StringVar()
                 self.textinputvar3.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar3)
+                self.input_frame2.Entry(self.textinputvar3)
 
             if self.optionmenuvar.get() == "Círculo":
 
                 self.textinputvar = tk.StringVar()
                 self.textinputvar.trace_add('write', self.textupdate)
-                self.input_frame.Entry(self.textinputvar)
+                self.input_frame2.Entry(self.textinputvar)
 
-        self.input_frame.Button("Confirmar", self.handleButton2Click)
+        self.input_frame2.Button("Confirmar", self.handleButton2Click)
 
     def __init__(self):
         super().__init__("Funções", "park", "dark")
 
-        global escolha1
-        global escolha2
-        global escolha3
-        global escolha4
+        self.input_frame3 = self.addLabelFrame("Log:", rowspan=2)
+        self.input_frame3.Text("Historico de Operações")
 
+        self.nextCol()
         self.option_menu_list = ["Triângulo", "Quadrado", "Retângulo", "Paralelogramo", "Losango", "Trapézio", "Círculo"]
         self.optionmenuvar = tk.StringVar(value=self.option_menu_list[0])
         self.input_frame = self.addLabelFrame("Menu:", rowspan=2)
-        escolha1 = self.input_frame.OptionMenu(self.option_menu_list, self.optionmenuvar)
+
+        self.input_frame.OptionMenu(self.option_menu_list, self.optionmenuvar)
         
         self.checkbox1 = tk.BooleanVar()
         self.checkbox2 = tk.BooleanVar()
         self.togglebuttonvar = tk.BooleanVar()
-        escolha2 = self.input_frame.Checkbutton("Perímetro", self.checkbox2)
-        escolha3 = self.input_frame.Checkbutton("Área", self.checkbox1)
+        self.input_frame.Checkbutton("Perímetro", self.checkbox2)
+        self.input_frame.Checkbutton("Área", self.checkbox1)
 
-        escolha4 = self.input_frame.Button("Confirmar", self.handleButtonClick)
+        self.input_frame.Button("Confirmar", self.handleButtonClick)
 
         self.run()
 
