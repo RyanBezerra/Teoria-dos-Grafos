@@ -2,109 +2,209 @@ import TKinterModernThemes as TKMT
 import tkinter as tk
 import math
 
-#Teste
-
 class App(TKMT.ThemedTKinterFrame):
 
     def textupdate(self, _var, _indx, _mode):
 
-        if self.optionmenuvar.get() == "Triângulo":
-            lado1_str = self.textinputvar.get()
-            lado2_str = self.textinputvar2.get()
-            lado3_str = self.textinputvar3.get()
+        #Calculo do perimetro 
 
-            try:
-                lado1 = float(lado1_str)
-                lado2 = float(lado2_str)
-                lado3 = float(lado3_str)
+        if self.checkbox2.get() == True:
 
-                global PTriângulo
-                PTriângulo = lado1 + lado2 + lado3 
+            if self.optionmenuvar.get() == "Triângulo":
+                lado1_str = self.textinputvar.get()
+                lado2_str = self.textinputvar2.get()
+                lado3_str = self.textinputvar3.get()
 
-            except ValueError:
-                return        
+                try:
+                    lado1 = float(lado1_str)
+                    lado2 = float(lado2_str)
+                    lado3 = float(lado3_str)
 
-        if self.optionmenuvar.get() == "Quadrado":
-            lado1_str = self.textinputvar.get()
+                    global PTriângulo
+                    PTriângulo = lado1 + lado2 + lado3 
 
-            try:
-                lado1 = float(lado1_str)
+                except ValueError:
+                    return     
 
-                global PQuadrado
-                PQuadrado = lado1 * 4
+            if self.optionmenuvar.get() == "Quadrado":
+                lado1_str = self.textinputvar.get()
 
-            except ValueError:
-                return
+                try:
+                    lado1 = float(lado1_str)
 
-        if self.optionmenuvar.get() == "Retângulo":
-            lado1_str = self.textinputvar.get()
-            lado2_str = self.textinputvar2.get()
+                    global PQuadrado
+                    PQuadrado = lado1 * 4
 
-            try:
-                lado1 = float(lado1_str)
-                lado2 = float(lado2_str)
+                except ValueError:
+                    return
 
-                global PRetângulo
-                PRetângulo = (2*lado1) + (2*lado2)
+            if self.optionmenuvar.get() == "Retângulo":
+                lado1_str = self.textinputvar.get()
+                lado2_str = self.textinputvar2.get()
 
-            except ValueError:
-                return
+                try:
+                    lado1 = float(lado1_str)
+                    lado2 = float(lado2_str)
 
-        if self.optionmenuvar.get() == "Paralelogramo":
-            lado1_str = self.textinputvar.get()
-            lado2_str = self.textinputvar2.get()
+                    global PRetângulo
+                    PRetângulo = (2*lado1) + (2*lado2)
 
-            try:
-                lado1 = float(lado1_str)
-                lado2 = float(lado2_str)
+                except ValueError:
+                    return
 
-                global PParalelogramo
-                PParalelogramo = (2*lado1) + (2*lado2)
+            if self.optionmenuvar.get() == "Paralelogramo":
+                lado1_str = self.textinputvar.get()
+                lado2_str = self.textinputvar2.get()
 
-            except ValueError:
-                return
+                try:
+                    lado1 = float(lado1_str)
+                    lado2 = float(lado2_str)
 
-        if self.optionmenuvar.get() == "Losango":
-            lado1_str = self.textinputvar.get()
+                    global PParalelogramo
+                    PParalelogramo = (2*lado1) + (2*lado2)
 
-            try:
-                lado1 = float(lado1_str)
+                except ValueError:
+                    return
 
-                global PLosango
-                PLosango = lado1 * 4
+            if self.optionmenuvar.get() == "Losango":
+                lado1_str = self.textinputvar.get()
 
-            except ValueError:
-                return
+                try:
+                    lado1 = float(lado1_str)
 
-        if self.optionmenuvar.get() == "Trapézio":
-            lado1_str = self.textinputvar.get()
-            lado2_str = self.textinputvar2.get()
-            lado3_str = self.textinputvar3.get()
-            lado4_str = self.textinputvar4.get()
+                    global PLosango
+                    PLosango = lado1 * 4
 
-            try:
-                lado1 = float(lado1_str)
-                lado2 = float(lado2_str)
-                lado3 = float(lado3_str)
-                lado4 = float(lado4_str)
+                except ValueError:
+                    return
 
-                global PTrapézio
-                PTrapézio = lado1 + lado2 + lado3 + lado4
+            if self.optionmenuvar.get() == "Trapézio":
+                lado1_str = self.textinputvar.get()
+                lado2_str = self.textinputvar2.get()
+                lado3_str = self.textinputvar3.get()
+                lado4_str = self.textinputvar4.get()
 
-            except ValueError:
-                return 
+                try:
+                    lado1 = float(lado1_str)
+                    lado2 = float(lado2_str)
+                    lado3 = float(lado3_str)
+                    lado4 = float(lado4_str)
 
-        if self.optionmenuvar.get() == "Círculo":
-            lado1_str = self.textinputvar.get()
+                    global PTrapézio
+                    PTrapézio = lado1 + lado2 + lado3 + lado4
 
-            try:
-                lado1 = float(lado1_str)
+                except ValueError:
+                    return 
 
-                global PCírculo
-                PCírculo = 2 * math.pi * lado1
+            if self.optionmenuvar.get() == "Círculo":
+                lado1_str = self.textinputvar.get()
 
-            except ValueError:
-                return
+                try:
+                    lado1 = float(lado1_str)
+
+                    global PCírculo
+                    PCírculo = 2 * math.pi * lado1
+
+                except ValueError:
+                    return
+
+        if self.checkbox1.get() == True:
+
+            if self.optionmenuvar.get() == "Triângulo":
+                base_str = self.textinputvar.get()
+                altura_str = self.textinputvar2.get()
+
+                try:
+                    base = float(base_str)
+                    altura = float(altura_str)
+
+                    global ATriângulo
+                    ATriângulo = (base * altura) / 2
+
+                except ValueError:
+                    return
+
+            if self.optionmenuvar.get() == "Quadrado":
+                lado_str = self.textinputvar.get()
+
+                try:
+                    lado = float(lado_str)
+
+                    global AQuadrado
+                    AQuadrado = lado ** 2
+
+                except ValueError:
+                    return
+
+            if self.optionmenuvar.get() == "Retângulo":
+                altura_str = self.textinputvar.get()
+                base_str = self.textinputvar2.get()
+
+                try:
+                    altura = float(altura_str)
+                    base = float(base_str)
+
+                    global ARetângulo
+                    ARetângulo = altura * base
+
+                except ValueError:
+                    return
+
+            if self.optionmenuvar.get() == "Paralelogramo":
+                altura_str = self.textinputvar.get()
+                base_str = self.textinputvar2.get()
+
+                try:
+                    altura = float(altura_str)
+                    base = float(base_str)
+
+                    global AParalelogramo
+                    AParalelogramo = altura * base
+
+                except ValueError:
+                    return
+
+            if self.optionmenuvar.get() == "Losango":
+                diagonalmaior_str = self.textinputvar.get()
+                diagonalmenor_str = self.textinputvar2.get()
+
+                try:
+                    diagonalmaior = float(diagonalmaior_str)
+                    diagonalmenor = float(diagonalmenor_str)
+
+                    global ALosango
+                    ALosango = (diagonalmaior * diagonalmenor) / 2
+
+                except ValueError:
+                    return
+
+            if self.optionmenuvar.get() == "Trapézio":
+                basemaior_str = self.textinputvar.get()
+                basemenor_str = self.textinputvar2.get()
+                altura_str = self.textinputvar3.get()
+
+                try:
+                    basemaior = float(basemaior_str)
+                    basemenor = float(basemenor_str)
+                    altura = float(altura_str)
+
+                    global ATrapézio
+                    ATrapézio = (basemaior + basemenor) * altura / 2
+
+                except ValueError:
+                    return   
+
+            if self.optionmenuvar.get() == "Círculo":
+                raio_str = self.textinputvar.get()
+
+                try:
+                    raio = float(raio_str)
+
+                    global ACírculo
+                    ACírculo = math.pi * raio ** 2
+
+                except ValueError:
+                    return  
 
     def handleButton2Click(self):
 
@@ -135,7 +235,28 @@ class App(TKMT.ThemedTKinterFrame):
                 if self.checkbox2.get() == True and self.optionmenuvar.get() == "Círculo":
                     self.input_frame.Label(PCírculo)
 
-                self.button2_clicked = True
+            if self.checkbox1.get() == True:
+
+                if self.checkbox1.get() == True and self.optionmenuvar.get() == "Triângulo":
+                    self.input_frame.Label(ATriângulo)
+
+                if self.checkbox1.get() == True and self.optionmenuvar.get() == "Quadrado":
+                    self.input_frame.Label(AQuadrado)
+
+                if self.checkbox1.get() == True and self.optionmenuvar.get() == "Retângulo":
+                    self.input_frame.Label(ARetângulo)
+
+                if self.checkbox1.get() == True and self.optionmenuvar.get() == "Paralelogramo":
+                    self.input_frame.Label(AParalelogramo)
+
+                if self.checkbox1.get() == True and self.optionmenuvar.get() == "Losango":
+                    self.input_frame.Label(ALosango)
+
+                if self.checkbox1.get() == True and self.optionmenuvar.get() == "Trapézio":
+                    self.input_frame.Label(ATrapézio)
+
+                if self.checkbox1.get() == True and self.optionmenuvar.get() == "Círculo":
+                    self.input_frame.Label(ACírculo)
 
     def handleButtonClick(self):
         print("Opção escolhida:", self.optionmenuvar.get())
@@ -145,68 +266,132 @@ class App(TKMT.ThemedTKinterFrame):
         escolha3.destroy()
         escolha4.destroy()
 
-        if self.optionmenuvar.get() == "Triângulo":
+        if self.checkbox2.get() == True:
 
-            self.textinputvar = tk.StringVar()
-            self.textinputvar.trace_add('write', self.textupdate)
-            self.input_frame.Entry(self.textinputvar)
-            self.textinputvar2 = tk.StringVar()
-            self.textinputvar2.trace_add('write', self.textupdate)
-            self.input_frame.Entry(self.textinputvar2)
-            self.textinputvar3 = tk.StringVar()
-            self.textinputvar3.trace_add('write', self.textupdate)
-            self.input_frame.Entry(self.textinputvar3)
+            if self.optionmenuvar.get() == "Triângulo":
 
-        if self.optionmenuvar.get() == "Quadrado":
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar)
+                self.textinputvar2 = tk.StringVar()
+                self.textinputvar2.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar2)
+                self.textinputvar3 = tk.StringVar()
+                self.textinputvar3.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar3)
 
-            self.textinputvar = tk.StringVar()
-            self.textinputvar.trace_add('write', self.textupdate)
-            self.input_frame.Entry(self.textinputvar)
+            if self.optionmenuvar.get() == "Quadrado":
 
-        if self.optionmenuvar.get() == "Retângulo":
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar)
 
-            self.textinputvar = tk.StringVar()
-            self.textinputvar.trace_add('write', self.textupdate)
-            self.input_frame.Entry(self.textinputvar)
-            self.textinputvar2 = tk.StringVar()
-            self.textinputvar2.trace_add('write', self.textupdate)
-            self.input_frame.Entry(self.textinputvar2)
+            if self.optionmenuvar.get() == "Retângulo":
 
-        if self.optionmenuvar.get() == "Paralelogramo":
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar)
+                self.textinputvar2 = tk.StringVar()
+                self.textinputvar2.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar2)
 
-            self.textinputvar = tk.StringVar()
-            self.textinputvar.trace_add('write', self.textupdate)
-            self.input_frame.Entry(self.textinputvar)
-            self.textinputvar2 = tk.StringVar()
-            self.textinputvar2.trace_add('write', self.textupdate)
-            self.input_frame.Entry(self.textinputvar2)
+            if self.optionmenuvar.get() == "Paralelogramo":
 
-        if self.optionmenuvar.get() == "Losango":
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar)
+                self.textinputvar2 = tk.StringVar()
+                self.textinputvar2.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar2)
 
-            self.textinputvar = tk.StringVar()
-            self.textinputvar.trace_add('write', self.textupdate)
-            self.input_frame.Entry(self.textinputvar)
+            if self.optionmenuvar.get() == "Losango":
 
-        if self.optionmenuvar.get() == "Trapézio":
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar)
 
-            self.textinputvar = tk.StringVar()
-            self.textinputvar.trace_add('write', self.textupdate)
-            self.input_frame.Entry(self.textinputvar)
-            self.textinputvar2 = tk.StringVar()
-            self.textinputvar2.trace_add('write', self.textupdate)
-            self.input_frame.Entry(self.textinputvar2)
-            self.textinputvar3 = tk.StringVar()
-            self.textinputvar3.trace_add('write', self.textupdate)
-            self.input_frame.Entry(self.textinputvar3)
-            self.textinputvar4 = tk.StringVar()
-            self.textinputvar4.trace_add('write', self.textupdate)
-            self.input_frame.Entry(self.textinputvar4)
+            if self.optionmenuvar.get() == "Trapézio":
 
-        if self.optionmenuvar.get() == "Círculo":
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar)
+                self.textinputvar2 = tk.StringVar()
+                self.textinputvar2.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar2)
+                self.textinputvar3 = tk.StringVar()
+                self.textinputvar3.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar3)
+                self.textinputvar4 = tk.StringVar()
+                self.textinputvar4.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar4)
 
-            self.textinputvar = tk.StringVar()
-            self.textinputvar.trace_add('write', self.textupdate)
-            self.input_frame.Entry(self.textinputvar)
+            if self.optionmenuvar.get() == "Círculo":
+
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar)
+
+        if self.checkbox1.get() == True:
+
+            if self.optionmenuvar.get() == "Triângulo":
+
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar)
+                self.textinputvar2 = tk.StringVar()
+                self.textinputvar2.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar2)
+
+            if self.optionmenuvar.get() == "Quadrado":
+
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar)
+
+            if self.optionmenuvar.get() == "Retângulo":
+
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar)
+                self.textinputvar2 = tk.StringVar()
+                self.textinputvar2.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar2)
+
+            if self.optionmenuvar.get() == "Paralelogramo":
+
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar)
+                self.textinputvar2 = tk.StringVar()
+                self.textinputvar2.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar2)
+
+            if self.optionmenuvar.get() == "Losango":
+
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar)
+                self.textinputvar2 = tk.StringVar()
+                self.textinputvar2.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar2)
+
+            if self.optionmenuvar.get() == "Trapézio":
+
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar)
+                self.textinputvar2 = tk.StringVar()
+                self.textinputvar2.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar2)
+                self.textinputvar3 = tk.StringVar()
+                self.textinputvar3.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar3)
+
+            if self.optionmenuvar.get() == "Círculo":
+
+                self.textinputvar = tk.StringVar()
+                self.textinputvar.trace_add('write', self.textupdate)
+                self.input_frame.Entry(self.textinputvar)
 
         self.input_frame.Button("Confirmar", self.handleButton2Click)
 
