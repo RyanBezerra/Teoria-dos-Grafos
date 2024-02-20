@@ -517,6 +517,18 @@ class App(TKMT.ThemedTKinterFrame):
 
             contador3 = 1
 
+    def atualizar_checkbox1(self):
+        if self.checkbox1.get():
+            self.checkbox2a.config(state=tk.DISABLED)
+        else:
+            self.checkbox2a.config(state=tk.NORMAL)
+
+    def atualizar_checkbox2(self):
+        if self.checkbox2.get():
+            self.checkbox1a.config(state=tk.DISABLED)
+        else:
+            self.checkbox1a.config(state=tk.NORMAL)
+
     def __init__(self):
         super().__init__("Funções", "park", "dark")
 
@@ -533,8 +545,9 @@ class App(TKMT.ThemedTKinterFrame):
         self.checkbox1 = tk.BooleanVar()
         self.checkbox2 = tk.BooleanVar()
         self.togglebuttonvar = tk.BooleanVar()
-        self.input_frame.Checkbutton("Perímetro", self.checkbox2)
-        self.input_frame.Checkbutton("Área", self.checkbox1)
+
+        self.checkbox2a = self.input_frame.Checkbutton("Perímetro", self.checkbox2, command=self.atualizar_checkbox2)
+        self.checkbox1a = self.input_frame.Checkbutton("Área", self.checkbox1, command=self.atualizar_checkbox1)
 
         self.input_frame.Button("Confirmar", self.handleButtonClick)
 
