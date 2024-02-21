@@ -1,4 +1,4 @@
-**Calculadora de Perímetros e Áreas - TKinterModernThemes**
+**Calculadora de perímetros e áreas com interface grafica**
 
 Este projeto implementa uma calculadora gráfica em Python usando a biblioteca `TKinterModernThemes`. A aplicação permite calcular perímetros e áreas de diferentes figuras geométricas, oferecendo uma interface amigável e interativa. Nenhum requesito ou dependencia, apenas execute o .exe e veja a magica da portabilidade acontecer!
 
