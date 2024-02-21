@@ -1,19 +1,35 @@
-Este código Python implementa uma aplicação gráfica usando a biblioteca TKinterModernThemes para calcular perímetros e áreas de diversas figuras geométricas. A aplicação oferece uma interface gráfica com opções para selecionar o tipo de figura geométrica (triângulo, quadrado, retângulo, paralelogramo, losango, trapézio, círculo) e escolher se deseja calcular o perímetro e/ou a área.
+Calculadora de Perímetros e Áreas - TKinterModernThemes
 
-##Funcionamento:
+Este projeto implementa uma calculadora gráfica em Python usando a biblioteca TKinterModernThemes. A aplicação permite calcular perímetros e áreas de diferentes figuras geométricas, oferecendo uma interface amigável e interativa.
 
-##Seleção da Figura Geométrica:
+Funcionalidades:
+Seleção da Figura Geométrica:
 
-A aplicação permite escolher o tipo de figura geométrica por meio de um menu suspenso (OptionMenu), que inclui opções como triângulo, quadrado, etc.
-##Cálculo do Perímetro e Área:
+Escolha o tipo de figura geométrica no menu suspenso, incluindo opções como triângulo, quadrado, retângulo, paralelogramo, losango, trapézio e círculo.
+Cálculo Dinâmico:
 
-Os cálculos são realizados dinamicamente à medida que o usuário insere os valores necessários (por exemplo, lado, base, altura) em campos de entrada.
-A aplicação oferece opções para calcular tanto o perímetro quanto a área, e o usuário pode escolher quais cálculos deseja realizar por meio de caixas de seleção (Checkbutton).
-##Exibição de Resultados:
+Os cálculos são realizados em tempo real conforme o usuário insere valores nos campos de entrada.
+A aplicação oferece a opção de calcular tanto o perímetro quanto a área.
+Exibição de Resultados:
 
-Os resultados dos cálculos são exibidos em um quadro de log (LabelFrame) na interface gráfica.
-Os resultados são atualizados automaticamente à medida que o usuário insere ou confirma os valores.
-##Controle de Interface:
+Os resultados são exibidos dinamicamente em um quadro de log na interface gráfica.
+A aplicação atualiza automaticamente os resultados conforme os valores são inseridos ou confirmados.
+Controle Dinâmico da Interface:
 
-O código inclui lógica para controlar dinamicamente a interface gráfica com base nas escolhas do usuário.
-Por exemplo, campos de entrada e botões são adicionados ou removidos com base na seleção do tipo de figura geométrica e no tipo de cálculo desejado.
+A interface gráfica se ajusta dinamicamente com base nas escolhas do usuário.
+Campos de entrada e botões são adicionados ou removidos conforme a figura geométrica e os cálculos escolhidos.
+Uso:
+Requisitos:
+
+Python
+TKinterModernThemes (instalável via pip install TKinterModernThemes)
+Execução:
+
+Execute o script CalculadoraDeFunções.py.
+Escolha e Cálculos:
+
+Escolha a figura geométrica e os cálculos desejados.
+Insira os valores necessários e confirme.
+Resultados:
+
+Os resultados são exibidos dinamicamente na interface gráfica.
