@@ -9,7 +9,7 @@ if sys.platform == "win32":
 
 setup(
     name="CalculadoraDeFunções",
-    version="1.0",
+    version="1.1",
     description="Calcula a área e o perémetro de algumas figuras geometricas planas",
     options= {"build_exe": build_exe_options},
     executables= [Executable("CalculadoraDeFunções.py", base=base)]

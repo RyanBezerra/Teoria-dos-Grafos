@@ -423,13 +423,11 @@ class App(TKMT.ThemedTKinterFrame):
             contador2 = 1
 
         else:
-            try:
-                for entry in delete_entry:
-                    entry.destroy()
-                for button in delete_buttons:
-                    button.destroy()
-            except:
-                return
+
+            for entry in delete_entry:
+                entry.destroy()
+            for button in delete_buttons:
+                button.destroy()
 
         if self.checkbox1.get() == True:
 
@@ -541,13 +539,11 @@ class App(TKMT.ThemedTKinterFrame):
             contador3 = 1
 
         else:
-            try:
-                for entry in delete_entry2:
-                    entry.destroy()
-                for button in delete_buttons2:
-                    button.destroy()
-            except:
-                return
+
+            for entry in delete_entry2:
+                entry.destroy()
+            for button in delete_buttons2:
+                button.destroy()
 
     def __init__(self):
         super().__init__("Funções", "park", "dark")
